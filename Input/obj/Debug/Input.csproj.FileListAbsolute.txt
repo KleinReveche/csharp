@@ -1,0 +1,8 @@
+C:\Users\COLLEGE\Documents\K\Input\bin\Debug\Input.exe.config
+C:\Users\COLLEGE\Documents\K\Input\bin\Debug\Input.exe
+C:\Users\COLLEGE\Documents\K\Input\bin\Debug\Input.pdb
+C:\Users\COLLEGE\Documents\K\Input\obj\Debug\Input.csproj.AssemblyReference.cache
+C:\Users\COLLEGE\Documents\K\Input\obj\Debug\Input.csproj.SuggestedBindingRedirects.cache
+C:\Users\COLLEGE\Documents\K\Input\obj\Debug\Input.csproj.CoreCompileInputs.cache
+C:\Users\COLLEGE\Documents\K\Input\obj\Debug\Input.exe
+C:\Users\COLLEGE\Documents\K\Input\obj\Debug\Input.pdb
