@@ -1,0 +1,7 @@
+D:\Klein\Documents\Projects\CSharp\SuperSimpleCalc\bin\Debug\SuperSimpleCalc.exe.config
+D:\Klein\Documents\Projects\CSharp\SuperSimpleCalc\bin\Debug\SuperSimpleCalc.exe
+D:\Klein\Documents\Projects\CSharp\SuperSimpleCalc\bin\Debug\SuperSimpleCalc.pdb
+D:\Klein\Documents\Projects\CSharp\SuperSimpleCalc\obj\Debug\SuperSimpleCalc.csproj.AssemblyReference.cache
+D:\Klein\Documents\Projects\CSharp\SuperSimpleCalc\obj\Debug\SuperSimpleCalc.csproj.CoreCompileInputs.cache
+D:\Klein\Documents\Projects\CSharp\SuperSimpleCalc\obj\Debug\SuperSimpleCalc.exe
+D:\Klein\Documents\Projects\CSharp\SuperSimpleCalc\obj\Debug\SuperSimpleCalc.pdb
