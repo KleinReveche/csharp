@@ -1,0 +1,8 @@
+C:\Users\COLLEGE\Documents\Klein Rev\SuperBasicCalcRedux\bin\Debug\SuperBasicCalcRedux.exe.config
+C:\Users\COLLEGE\Documents\Klein Rev\SuperBasicCalcRedux\bin\Debug\SuperBasicCalcRedux.exe
+C:\Users\COLLEGE\Documents\Klein Rev\SuperBasicCalcRedux\bin\Debug\SuperBasicCalcRedux.pdb
+C:\Users\COLLEGE\Documents\Klein Rev\SuperBasicCalcRedux\obj\Debug\SuperBasicCalcRedux.csproj.AssemblyReference.cache
+C:\Users\COLLEGE\Documents\Klein Rev\SuperBasicCalcRedux\obj\Debug\SuperBasicCalcRedux.csproj.SuggestedBindingRedirects.cache
+C:\Users\COLLEGE\Documents\Klein Rev\SuperBasicCalcRedux\obj\Debug\SuperBasicCalcRedux.csproj.CoreCompileInputs.cache
+C:\Users\COLLEGE\Documents\Klein Rev\SuperBasicCalcRedux\obj\Debug\SuperBasicCalcRedux.exe
+C:\Users\COLLEGE\Documents\Klein Rev\SuperBasicCalcRedux\obj\Debug\SuperBasicCalcRedux.pdb
