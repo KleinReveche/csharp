@@ -29,17 +29,17 @@ namespace MinMaxNumbers
             Console.Write("> ");
             e = int.Parse(Console.ReadLine());
 
-            if (a > b && a > c && a > d && a > e) max = a;
-            if (b > c && b > d && b > e && b > a) max = b;
-            if (c > d && c > e && c > a && c > b) max = c;
-            if (d > e && d > a && d > b && d > c) max = d;
-            if (e > a && e > b && e > c && d > b) max = e;
+            if (a >= b && a >= c && a >= d && a >= e) max = a;
+            if (b >= c && b >= d && b >= e && b >= a) max = b;
+            if (c >= d && c >= e && c >= a && c >= b) max = c;
+            if (d >= e && d >= a && d >= b && d >= c) max = d;
+            if (e >= a && e >= b && e >= c && d >= b) max = e;
 
-            if (a < b && a < c && a < d && a < e) min = a;
-            if (b < c && b < d && b < e && b < a) min = b;
-            if (c < d && c < e && c < a && c < b) min = c;
-            if (d < e && d < a && d < b && d < c) min = d;
-            if (e < a && e < b && e < c && d < b) min = e;
+            if (a <= b && a <= c && a <= d && a <= e) min = a;
+            if (b <= c && b <= d && b <= e && b <= a) min = b;
+            if (c <= d && c <= e && c <= a && c <= b) min = c;
+            if (d <= e && d <= a && d <= b && d <= c) min = d;
+            if (e <= a && e <= b && e <= c && d <= b) min = e;
 
             Console.WriteLine("The highest value is {0}.", max);
             Console.WriteLine("The lowest value is {0}.", min);
