@@ -1,0 +1,8 @@
+C:\Users\COLLEGE\Documents\Klein Rev\MinMaxNumbers\obj\Debug\MinMaxNumbers.csproj.AssemblyReference.cache
+C:\Users\COLLEGE\Documents\Klein Rev\MinMaxNumbers\obj\Debug\MinMaxNumbers.csproj.SuggestedBindingRedirects.cache
+C:\Users\COLLEGE\Documents\Klein Rev\MinMaxNumbers\obj\Debug\MinMaxNumbers.csproj.CoreCompileInputs.cache
+C:\Users\COLLEGE\Documents\Klein Rev\MinMaxNumbers\bin\Debug\MinMaxNumbers.exe.config
+C:\Users\COLLEGE\Documents\Klein Rev\MinMaxNumbers\bin\Debug\MinMaxNumbers.exe
+C:\Users\COLLEGE\Documents\Klein Rev\MinMaxNumbers\bin\Debug\MinMaxNumbers.pdb
+C:\Users\COLLEGE\Documents\Klein Rev\MinMaxNumbers\obj\Debug\MinMaxNumbers.exe
+C:\Users\COLLEGE\Documents\Klein Rev\MinMaxNumbers\obj\Debug\MinMaxNumbers.pdb
