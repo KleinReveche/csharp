@@ -4,17 +4,22 @@ namespace Grade
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             string fullName;
             string equivGrade;
-            double grade;
+            double grade = 0;
+            bool isValid = false;
 
             Console.Write("Full Name: ");
             fullName = Console.ReadLine();
-
-            Console.Write("Grade: ");
-            grade = double.Parse(Console.ReadLine());
+            
+            while (!isValid)
+            {
+                Console.Write("Grade: ");
+                if (double.TryParse(Console.ReadLine(), out grade) && grade <= 100)
+                    isValid = true;
+            }
 
             if (grade >= 98)
                 equivGrade = "1.0";
@@ -37,7 +42,7 @@ namespace Grade
             else 
                 equivGrade = "5.0";
 
-            Console.WriteLine("{0}, your grade is {1}", fullName, equivGrade);
+            Console.WriteLine("{0}, your grade is {1}.", fullName, equivGrade);
         }
     }
 }
