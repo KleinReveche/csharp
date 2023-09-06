@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace MyActivities_Reveche
@@ -46,6 +47,23 @@ namespace MyActivities_Reveche
 
             Console.WriteLine("The highest value is {0}.", numbers.Max());
             Console.WriteLine("The lowest value is {0}.", numbers.Min());
+        }
+
+        public static void ForLoopWithCount()
+        {
+            int count = 0, sum = 0;
+            Console.WriteLine("Welcome to Average Plus!\n");
+
+            Console.Write("Enter how many would you like to average: ");
+            count = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("\nEnter {0} Numbers:", count);
+            for (int i = 0; i < count; i++)
+            {
+                Console.Write("> ");
+                sum = sum + int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("\nThe Average is {0}", (float) sum / count);
         }
     }
 }

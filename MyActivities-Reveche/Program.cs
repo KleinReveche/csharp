@@ -8,11 +8,13 @@ namespace MyActivities_Reveche
         {
             //Arithmetic();
             //Grade();
-            HighestLowest();
+            //HighestLowest();
+            //ForLoop();
 
             // These are extra alternative implementations of the activities
             //Alt.HighestLowestArrays();
             //Alt.HighestLowestLists();
+            Alt.ForLoopWithCount();
 
         }
         static void Arithmetic()
@@ -137,5 +139,17 @@ namespace MyActivities_Reveche
             Console.WriteLine("The lowest value is {0}.", min);
         }
 
+        static void ForLoop()
+        {
+            int count = 5, sum = 0;
+
+            Console.WriteLine("Enter {0} Numbers:", count);
+            for (int i = 0; i < count; i++)
+            {
+                Console.Write("> ");
+                sum = sum + int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("\nThe Average is {0}", (float) sum / count);
+        }
     }
 }
