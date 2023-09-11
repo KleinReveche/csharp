@@ -158,8 +158,6 @@ namespace MyActivities_Reveche
             int count;
             string order;
 
-            Console.Write("Enter number of loop/s: ");
-            count = int.Parse(Console.ReadLine());
             Console.Write("In what order would you like to display? [asc/desc]: ");
             order = Console.ReadLine().ToLower();
 
