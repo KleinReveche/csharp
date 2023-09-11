@@ -165,9 +165,9 @@ namespace MyActivities_Reveche
 
             if (order == "asc")
             {
-                for (int i = 0; i < count; i++)
+                for (int i = 1; i <= count; i++)
                 {
-                    Console.Write($"{i + 1} ");
+                    Console.Write((i < count) ? i + ", " : i.ToString());
                 }
                 Console.WriteLine();
             }
@@ -175,7 +175,7 @@ namespace MyActivities_Reveche
             {
                 for (int i = count; i > 0; i--)
                 {
-                    Console.Write($"{i} ");
+                    Console.Write((i > 1) ? i + ", " : i.ToString());
                 }
                 Console.WriteLine();
             }
