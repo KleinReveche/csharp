@@ -10,12 +10,15 @@ namespace MyActivities_Reveche
             //Grade();
             //HighestLowest();
             //ForLoop();
-            ForLoopSortedNumbers();
+            //ForLoopSortedNumbers();
+            ForLoopOddEven();
 
             // These are extra alternative implementations of the activities
             //Alt.HighestLowestArrays();
             //Alt.HighestLowestLists();
             //Alt.ForLoopWithCount();
+            //Alt.ForLoopSortedNumbersSafe();
+            //Alt.ForLoopOddEven2();
 
         }
         static void Arithmetic()
@@ -158,6 +161,8 @@ namespace MyActivities_Reveche
             int count;
             string order;
 
+            Console.Write("Enter number of loop/s: ");
+            count = int.Parse(Console.ReadLine());
             Console.Write("In what order would you like to display? [asc/desc]: ");
             order = Console.ReadLine().ToLower();
 
@@ -181,6 +186,45 @@ namespace MyActivities_Reveche
             {
                 Console.WriteLine("Invalid Sort Direction.");
             }
+        }
+
+        static void ForLoopOddEven()
+        {
+            int n, number, evenCount = 0, oddCount = 0, sumEven = 0, sumOdd = 0;
+
+            Console.WriteLine("Welcome to my Odd-Even-inator!\n");
+            Console.Write("Enter n times: ");
+            n = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"\nEnter {n} numbers:");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write("> ");
+                number = int.Parse(Console.ReadLine());
+
+                if (number < 1)
+                {
+                    Console.Write("[Error: Enter a number more than 0] > ");
+                    number = int.Parse(Console.ReadLine());
+                }
+
+                if (number % 2 == 0)
+                {
+                    evenCount++;
+                    sumEven += number;
+                }
+                else 
+                {
+                    oddCount++;
+                    sumOdd += number;
+                }
+            }
+
+            Console.WriteLine($"\nThe # of even numbers is {evenCount}");
+            Console.WriteLine($"The sum of even numbers is {sumEven}");
+            Console.WriteLine($"The # of odd numbers is {oddCount}");
+            Console.WriteLine($"The sum of odd numbers is {sumOdd}");
+
         }
     }
 }
