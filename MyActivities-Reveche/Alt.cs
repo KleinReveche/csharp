@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 
 namespace MyActivities_Reveche
 {
+    /** This is an alternative implementation of the activities.  */
     public class Alt
     {
         public static void HighestLowestArrays()

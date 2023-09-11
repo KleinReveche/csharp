@@ -10,11 +10,12 @@ namespace MyActivities_Reveche
             //Grade();
             //HighestLowest();
             //ForLoop();
+            ForLoopSortedNumbers();
 
             // These are extra alternative implementations of the activities
             //Alt.HighestLowestArrays();
             //Alt.HighestLowestLists();
-            Alt.ForLoopWithCount();
+            //Alt.ForLoopWithCount();
 
         }
         static void Arithmetic()
@@ -150,6 +151,38 @@ namespace MyActivities_Reveche
                 sum = sum + int.Parse(Console.ReadLine());
             }
             Console.WriteLine("\nThe Average is {0}", (float) sum / count);
+        }
+
+        static void ForLoopSortedNumbers()
+        {
+            int count;
+            string order;
+
+            Console.Write("Enter number of loop/s: ");
+            count = int.Parse(Console.ReadLine());
+            Console.Write("In what order would you like to display? [asc/desc]: ");
+            order = Console.ReadLine().ToLower();
+
+            if (order == "asc")
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    Console.Write($"{i + 1} ");
+                }
+                Console.WriteLine();
+            }
+            else if (order == "desc")
+            {
+                for (int i = count; i > 0; i--)
+                {
+                    Console.Write($"{i} ");
+                }
+                Console.WriteLine();
+            }
+            else
+            {
+                Console.WriteLine("Invalid Sort Direction.");
+            }
         }
     }
 }
