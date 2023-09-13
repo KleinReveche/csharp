@@ -11,7 +11,9 @@ namespace MyActivities_Reveche
             //HighestLowest();
             //ForLoop();
             //ForLoopSortedNumbers();
-            ForLoopOddEven();
+            //ForLoopOddEven();
+            //WhileLoopSortedNumbers();
+            DoWhileLoopSortedNumbers();
 
             // These are extra alternative implementations of the activities
             //Alt.HighestLowestArrays();
@@ -151,7 +153,8 @@ namespace MyActivities_Reveche
             for (int i = 0; i < count; i++)
             {
                 Console.Write("> ");
-                sum = sum + int.Parse(Console.ReadLine());
+                int num = int.Parse(Console.ReadLine());
+                sum += num;
             }
             Console.WriteLine("\nThe Average is {0}", (float) sum / count);
         }
@@ -191,6 +194,7 @@ namespace MyActivities_Reveche
         static void ForLoopOddEven()
         {
             int n, number, evenCount = 0, oddCount = 0, sumEven = 0, sumOdd = 0;
+            string oddNumbers = "", evenNumbers = "";
 
             Console.WriteLine("Welcome to my Odd-Even-inator!\n");
             Console.Write("Enter n times: ");
@@ -212,19 +216,95 @@ namespace MyActivities_Reveche
                 {
                     evenCount++;
                     sumEven += number;
+                    evenNumbers += $"{number + (((evenCount + oddCount) < n - 1) ? ", " : "")}";
                 }
                 else 
                 {
                     oddCount++;
                     sumOdd += number;
+                    oddNumbers += $"{number + (((evenCount + oddCount) < n - 1) ? ", " : "")}";
                 }
             }
 
-            Console.WriteLine($"\nThe # of even numbers is {evenCount}");
+            Console.WriteLine($"\nThe # of even numbers is {evenCount}, which is [{evenNumbers}]");
             Console.WriteLine($"The sum of even numbers is {sumEven}");
-            Console.WriteLine($"The # of odd numbers is {oddCount}");
-            Console.WriteLine($"The sum of odd numbers is {sumOdd}");
+            Console.WriteLine($"The # of odd numbers is {oddCount}, which is [{oddNumbers}]");
+            Console.WriteLine($"The sum of odd numbers is {sumOdd}\n");
 
+        }
+
+        static void WhileLoopSortedNumbers()
+        {
+            int count;
+            string order;
+
+            Console.Write("Enter number of loop/s: ");
+            count = int.Parse(Console.ReadLine());
+            Console.Write("In what order would you like to display? [asc/desc]: ");
+            order = Console.ReadLine().ToLower();
+
+            if (order == "asc")
+            {
+                int i = 1;
+                while (i <= count)
+                {
+                    Console.Write((i < count) ? i + ", " : i.ToString());
+                    i++;
+                }
+                Console.WriteLine();
+            }
+            else if (order == "desc")
+            {
+                int i = count;
+                while (i > 0)
+                {
+                    Console.Write((i > 1) ? i + ", " : i.ToString());
+                    i++;
+                }
+                Console.WriteLine();
+            }
+            else
+            {
+                Console.WriteLine("Invalid Sort Direction.");
+            }
+        }
+        static void DoWhileLoopSortedNumbers()
+        {
+            
+            int count;
+            string order;
+
+            Console.Write("Enter number of loop/s: ");
+            count = int.Parse(Console.ReadLine());
+            Console.Write("In what order would you like to display? [asc/desc]: ");
+            order = Console.ReadLine().ToLower();
+
+            if (order == "asc")
+            {
+                int i = 1;
+                do
+                {
+                    Console.Write((i < count) ? i + ", " : i.ToString());
+                    i++;
+                }
+                while (i <= count);
+                Console.WriteLine();
+            }
+            else if (order == "desc")
+            {
+                int i = count;
+                do
+                {
+                    Console.Write((i > 1) ? i + ", " : i.ToString());
+                    i--;
+                }
+                while (i > 0);
+                Console.WriteLine();
+            }
+            else
+            {
+                Console.WriteLine("Invalid Sort Direction.");
+            }
         }
     }
 }
