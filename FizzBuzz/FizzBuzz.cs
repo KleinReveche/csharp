@@ -29,6 +29,23 @@ namespace FizzBuzz
                 {
                     Console.WriteLine(i);
                 }
+            }
+        }
+
+        private static void FizzBuzz2()
+        {
+            for (var i = 1; i <= 100; i++)
+            {
+                var str = "";  
+                
+                if (i % 3 == 0)  
+                    str += "Fizz";  
+                if (i % 5 == 0) 
+                    str += "Buzz";  
+                if (str.Length == 0)  
+                    str = i.ToString();  
+                
+                Console.WriteLine(str);  
             }   
         }
     }
