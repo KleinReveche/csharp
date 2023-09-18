@@ -35,6 +35,10 @@ namespace MyActivities_Reveche
                 Selector.Start(selectedMethod);
             else
                 Selector.Start();
+
+            // This prevents the app from immediately closing when run from the terminal.
+            Console.Write("Press any key to exit . . .");
+            Console.ReadKey();
         }
         static void Arithmetic()
         {
