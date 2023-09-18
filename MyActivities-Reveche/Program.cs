@@ -22,6 +22,7 @@ namespace MyActivities_Reveche
             methods.Add(WhileLoopSortedNumbers);
             methods.Add(DoWhileLoopSortedNumbers);
             methods.Add(QuizTwoLoops);
+            methods.Add(BMICalculator);
 
             // These are extra alternative implementations of the activities
             methods.Add(Selector.AltMethods);
@@ -91,17 +92,15 @@ namespace MyActivities_Reveche
         {
             string fullName;
             string equivGrade;
-            double grade = 0;
-            bool isValid = false;
+            double grade;
 
             Console.Write("Full Name: ");
             fullName = Console.ReadLine();
 
-            while (!isValid)
+            while (true)
             {
                 Console.Write("Grade: ");
-                if (double.TryParse(Console.ReadLine(), out grade) && grade <= 100)
-                    isValid = true;
+                if (double.TryParse(Console.ReadLine(), out grade) && grade <= 100) break;
             }
 
             if (grade >= 98)
@@ -285,6 +284,7 @@ namespace MyActivities_Reveche
                 Console.WriteLine("Invalid Sort Direction.");
             }
         }
+
         static void DoWhileLoopSortedNumbers()
         {
             
@@ -349,5 +349,58 @@ namespace MyActivities_Reveche
             Console.WriteLine(oddEvenResult);
             Console.WriteLine();
         }
+
+        static void BMICalculator()
+        {
+            
+            Console.WriteLine("Welcome to Dr. Lester Papadopoulos' Wonderful BMI Calculator!");
+
+            while (true)
+            {
+                double height, weight;
+
+                Console.WriteLine();
+
+                while (true)
+                {
+                    Console.Write("Input your height (feet.inches): ");
+                    if (double.TryParse(Console.ReadLine(), out height)) break;
+                }
+
+                while (true)
+                {
+                    Console.Write("Input your weight (kg): ");
+                    if (double.TryParse(Console.ReadLine(), out weight)) break;
+                }
+
+                double bmi = (((weight * 2.2) / Math.Pow(height * 12, 2)) * 703);
+
+                Console.WriteLine($"\nYour BMI is {bmi:N2}.");
+                Console.Write("Your status is ");
+
+                if (bmi < 18.5) 
+                {
+                    Console.Write("Underweight.\n");
+                }
+                else if (bmi < 25)
+                {
+                    Console.Write("Normal.\n");
+                }
+                else if (bmi < 40)
+                {
+                    Console.Write("Overweight.\n");
+                }
+                else
+                {
+                    Console.Write("Obese.\n");
+                }
+
+                Console.WriteLine("\nPress N if you don't want to continue...");
+                var key = Console.ReadKey();
+
+                if (key.Key == ConsoleKey.N) break;
+            }
+        }
+
     }
 }

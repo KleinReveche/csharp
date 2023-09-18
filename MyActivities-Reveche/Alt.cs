@@ -69,15 +69,13 @@ namespace MyActivities_Reveche
 
         public static void ForLoopSortedNumbersSafe()
         {
-            bool isValid = false;
-            int count = 0;
+            int count;
             string order;
 
-            while (!isValid)
+            while (true)
             {
                 Console.Write("Enter number of loop/s: ");
-                if (int.TryParse(Console.ReadLine(), out count))
-                    isValid = true;
+                if (int.TryParse(Console.ReadLine(), out count)) break;
             }
 
             Console.Write("In what order would you like to display? [asc/desc]: ");
@@ -107,16 +105,14 @@ namespace MyActivities_Reveche
 
         public static void ForLoopOddEven2()
         {
-            int n = 0, number, evenCount = 0, oddCount = 0, sumEven = 0, sumOdd = 0;
+            int n, number, evenCount = 0, oddCount = 0, sumEven = 0, sumOdd = 0;
             string oddNumbers = "", evenNumbers = "";
-            bool isValid = false;
 
             Console.WriteLine("Welcome to my Odd-Even-inator!\n");
-            while (!isValid)
+            while (true)
             {
                 Console.Write("Enter n times: ");
-                if (int.TryParse(Console.ReadLine(), out n))
-                    isValid = true;
+                if (int.TryParse(Console.ReadLine(), out n)) break;
             }
 
             Console.WriteLine($"\nEnter {n} numbers:");
@@ -124,15 +120,13 @@ namespace MyActivities_Reveche
             {
                 Console.Write("> ");
                 number = int.Parse(Console.ReadLine());
-                isValid = false;
 
                 if (number < 1)
                 {
-                    while (!isValid)
+                    while (true)
                     {
                         Console.Write("[Error: Enter a number more than 0] > ");
-                        if (int.TryParse(Console.ReadLine(), out number) && number > 0)
-                            isValid = true;
+                        if (int.TryParse(Console.ReadLine(), out number) && number > 0) break;
                     }
                 }
 

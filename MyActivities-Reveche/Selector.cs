@@ -26,8 +26,7 @@ namespace MyActivities_Reveche
 
         private static void DisplayMenu(List<Action> methodList, bool isAlt = false)
         {
-            int index = 0;
-            bool indexIsValid = false;
+            int index;
             string alt = (isAlt) ? "Alt " : "";
 
             Console.WriteLine($"Welcome to Klein's CSharp {alt}Activities!\n");
@@ -41,13 +40,10 @@ namespace MyActivities_Reveche
 
             Console.WriteLine();
 
-            while (!indexIsValid)
+            while (true)
             {
                 Console.Write("Select the method to run: ");
-                if (int.TryParse(Console.ReadLine(), out index))
-                {
-                    indexIsValid = true;
-                }
+                if (int.TryParse(Console.ReadLine(), out index)) break;
             }
 
             Console.Clear();
