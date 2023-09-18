@@ -6,3 +6,10 @@ C:\Users\COLLEGE\Documents\Klein Rev\MyActivities-Reveche\obj\Debug\MyActivities
 C:\Users\COLLEGE\Documents\Klein Rev\MyActivities-Reveche\obj\Debug\MyActivities-Reveche.csproj.CoreCompileInputs.cache
 C:\Users\COLLEGE\Documents\Klein Rev\MyActivities-Reveche\obj\Debug\MyActivities-Reveche.exe
 C:\Users\COLLEGE\Documents\Klein Rev\MyActivities-Reveche\obj\Debug\MyActivities-Reveche.pdb
+D:\Klein\Documents\Projects\CSharp\MyActivities-Reveche\obj\Debug\MyActivities-Reveche.csproj.AssemblyReference.cache
+D:\Klein\Documents\Projects\CSharp\MyActivities-Reveche\obj\Debug\MyActivities-Reveche.csproj.CoreCompileInputs.cache
+D:\Klein\Documents\Projects\CSharp\MyActivities-Reveche\obj\Debug\MyActivities-Reveche.exe
+D:\Klein\Documents\Projects\CSharp\MyActivities-Reveche\obj\Debug\MyActivities-Reveche.pdb
+D:\Klein\Documents\Projects\CSharp\MyActivities-Reveche\bin\Debug\MyActivities-Reveche.exe.config
+D:\Klein\Documents\Projects\CSharp\MyActivities-Reveche\bin\Debug\MyActivities-Reveche.exe
+D:\Klein\Documents\Projects\CSharp\MyActivities-Reveche\bin\Debug\MyActivities-Reveche.pdb

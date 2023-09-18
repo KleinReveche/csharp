@@ -4,25 +4,28 @@ using System.Linq;
 
 namespace MyActivities_Reveche
 {
-    /** This is an alternative implementation of the activities.  */
-    public class Alt
+    /// <summary> This is an alternative implementation of the activities. </summary>
+    public static class Alt
     {
+        /// <summary> Gets an int input from user and checks if valid. </summary>
+        private static void ReadAndCheckInt(string message, out int input)
+        {
+            while (true)
+            {
+                Console.Write(message);
+                if (int.TryParse(Console.ReadLine(), out input)) break;
+            }
+        }
+
         public static void HighestLowestArrays()
         {
             // with use of Arrays
             var numbers = new int[5];
 
+            // with for loops
             Console.WriteLine("Input 5 Numbers:");
-            Console.Write("> ");
-            numbers[0] = int.Parse(Console.ReadLine());
-            Console.Write("> ");
-            numbers[1] = int.Parse(Console.ReadLine());
-            Console.Write("> ");
-            numbers[2] = int.Parse(Console.ReadLine());
-            Console.Write("> ");
-            numbers[3] = int.Parse(Console.ReadLine());
-            Console.Write("> ");
-            numbers[4] = int.Parse(Console.ReadLine());
+            for (var i = 0; i < 5; i++)
+                ReadAndCheckInt("> ", out numbers[i]);
 
             Console.WriteLine("The highest value is {0}.", numbers.Max());
             Console.WriteLine("The lowest value is {0}.", numbers.Min());
@@ -33,17 +36,13 @@ namespace MyActivities_Reveche
             // with use of Lists
             var numbers = new List<int>();
 
+            // with for loops
             Console.WriteLine("Input 5 Numbers:");
-            Console.Write("> ");
-            numbers.Add(int.Parse(Console.ReadLine()));
-            Console.Write("> ");
-            numbers.Add(int.Parse(Console.ReadLine()));
-            Console.Write("> ");
-            numbers.Add(int.Parse(Console.ReadLine()));
-            Console.Write("> ");
-            numbers.Add(int.Parse(Console.ReadLine()));
-            Console.Write("> ");
-            numbers.Add(int.Parse(Console.ReadLine()));
+            for (var i = 0; i < 5; i++)
+            {
+                ReadAndCheckInt("> ", out var number);
+                numbers.Add(number);
+            }
 
             Console.WriteLine("The highest value is {0}.", numbers.Max());
             Console.WriteLine("The lowest value is {0}.", numbers.Min());
@@ -51,83 +50,70 @@ namespace MyActivities_Reveche
 
         public static void ForLoopWithCount()
         {
-            int sum = 0;
+            var sum = 0;
             Console.WriteLine("Welcome to Average Plus!\n");
 
-            Console.Write("Enter how many would you like to average: ");
-            int count = int.Parse(Console.ReadLine());
+            ReadAndCheckInt("Enter how many would you like to average: ", out var count);
 
             Console.WriteLine("\nEnter {0} Numbers:", count);
-            for (int i = 0; i < count; i++)
+            for (var i = 0; i < count; i++)
             {
-                Console.Write("> ");
-                var num = int.Parse(Console.ReadLine());
+                ReadAndCheckInt("> ", out var num);
                 sum += num;
             }
-            Console.WriteLine("\nThe Average is {0}", (float) sum / count);
+            Console.WriteLine("\nThe Average is {0}", (float)sum / count);
         }
 
         public static void ForLoopSortedNumbersSafe()
         {
-            int count;
-            string order;
-
-            while (true)
-            {
-                Console.Write("Enter number of loop/s: ");
-                if (int.TryParse(Console.ReadLine(), out count)) break;
-            }
+            ReadAndCheckInt("Enter number of loop/s: ", out var count);
 
             Console.Write("In what order would you like to display? [asc/desc]: ");
-            order = Console.ReadLine().ToLower();
+            var order = Console.ReadLine()?.ToLower();
 
-            if (order == "asc")
+            switch (order)
             {
-                for (int i = 1; i <= count; i++)
+                case "asc":
                 {
-                    Console.Write((i < count) ? i + ", " : i.ToString());
+                    for (var i = 1; i <= count; i++)
+                    {
+                        Console.Write((i < count) ? i + ", " : i.ToString());
+                    }
+                    Console.WriteLine();
+                    break;
                 }
-                Console.WriteLine();
-            }
-            else if (order == "desc")
-            {
-                for (int i = count; i > 0; i--)
+                case "desc":
                 {
-                    Console.Write((i > 1) ? i + ", " : i.ToString());
+                    for (var i = count; i > 0; i--)
+                    {
+                        Console.Write((i > 1) ? i + ", " : i.ToString());
+                    }
+                    Console.WriteLine();
+                    break;
                 }
-                Console.WriteLine();
-            }
-            else
-            {
-                Console.WriteLine("Invalid Sort Direction.");
+                default:
+                    Console.WriteLine("Invalid Sort Direction.");
+                    break;
             }
         }
 
         public static void ForLoopOddEven2()
         {
-            int n, number, evenCount = 0, oddCount = 0, sumEven = 0, sumOdd = 0;
+            int evenCount = 0, oddCount = 0, sumEven = 0, sumOdd = 0;
             string oddNumbers = "", evenNumbers = "";
 
             Console.WriteLine("Welcome to my Odd-Even-inator!\n");
-            while (true)
-            {
-                Console.Write("Enter n times: ");
-                if (int.TryParse(Console.ReadLine(), out n)) break;
-            }
+
+            ReadAndCheckInt("Enter n times: ", out var n);
 
             Console.WriteLine($"\nEnter {n} numbers:");
-            for (int i = 0; i < n; i++)
+            for (var i = 0; i < n; i++)
             {
-                Console.Write("> ");
-                number = int.Parse(Console.ReadLine());
+                ReadAndCheckInt("> ", out var number);
 
                 if (number < 1)
                 {
-                    while (true)
-                    {
-                        Console.Write("[Error: Enter a number more than 0] > ");
-                        if (int.TryParse(Console.ReadLine(), out number) && number > 0) break;
-                    }
+                    ReadAndCheckInt("[Error: Enter a number more than 0] > ", out number);
                 }
 
                 if (number % 2 == 0)

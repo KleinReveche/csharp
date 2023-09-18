@@ -1,16 +1,17 @@
 ﻿using System;
+// ReSharper disable JoinDeclarationAndInitializer, AssignNullToNotNullAttribute, SuggestVarOrType_BuiltInTypes
 
 namespace MyActivities_Reveche
 {
-    class Program
+    public static class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             // Modify this to directly run the method you want.
-            int selectedMethod = -1; // Change this to always be -1 when done.
+            var selectedMethod = -1; // Change this to always be -1 when done.
 
-            var methods = Selector.availableMethods;
-            var altMethods = Selector.availableAltMethods;
+            var methods = Selector.AvailableMethods;
+            var altMethods = Selector.AvailableAltMethods;
 
             // Add methods here to be invoked.
             methods.Add(Arithmetic);
@@ -22,7 +23,7 @@ namespace MyActivities_Reveche
             methods.Add(WhileLoopSortedNumbers);
             methods.Add(DoWhileLoopSortedNumbers);
             methods.Add(QuizTwoLoops);
-            methods.Add(BMICalculator);
+            methods.Add(BmiCalculator);
 
             // These are extra alternative implementations of the activities
             methods.Add(Selector.AltMethods);
@@ -31,8 +32,8 @@ namespace MyActivities_Reveche
             altMethods.Add(Alt.ForLoopWithCount);
             altMethods.Add(Alt.ForLoopSortedNumbersSafe);
             altMethods.Add(Alt.ForLoopOddEven2);
-            
-            if ( selectedMethod != -1 || (args.Length > 0 && int.TryParse(args[0], out selectedMethod)))
+
+            if (selectedMethod != -1 || (args.Length > 0 && int.TryParse(args[0], out selectedMethod)))
                 Selector.Start(selectedMethod);
             else
                 Selector.Start();
@@ -41,7 +42,7 @@ namespace MyActivities_Reveche
             Console.Write("Press any key to exit . . .");
             Console.ReadKey();
         }
-        static void Arithmetic()
+        private static void Arithmetic()
         {
             int x, y;
             float result = 0;
@@ -88,7 +89,7 @@ namespace MyActivities_Reveche
                 Console.WriteLine("The operator is invalid.");
         }
 
-        static void Grade()
+        private static void Grade()
         {
             string fullName;
             string equivGrade;
@@ -117,9 +118,9 @@ namespace MyActivities_Reveche
                 equivGrade = "2.25";
             else if (grade >= 80)
                 equivGrade = "2.50";
-            else if (grade >= 77)
+            else if (grade >= 76)
                 equivGrade = "2.75";
-            else if (grade == 75)
+            else if (Math.Abs(grade - 75) < 76)
                 equivGrade = "3.00";
             else
                 equivGrade = "5.0";
@@ -127,7 +128,7 @@ namespace MyActivities_Reveche
             Console.WriteLine("{0}, your grade is {1}.", fullName, equivGrade);
         }
 
-        static void HighestLowest()
+        private static void HighestLowest()
         {
             // Basic
             int a, b, c, d, e;
@@ -161,7 +162,7 @@ namespace MyActivities_Reveche
             Console.WriteLine("The lowest value is {0}.", min);
         }
 
-        static void ForLoop()
+        private static void ForLoop()
         {
             int count = 5, sum = 0;
 
@@ -172,10 +173,10 @@ namespace MyActivities_Reveche
                 int num = int.Parse(Console.ReadLine());
                 sum += num;
             }
-            Console.WriteLine("\nThe Average is {0}", (float) sum / count);
+            Console.WriteLine("\nThe Average is {0}", (float)sum / count);
         }
 
-        static void ForLoopSortedNumbers()
+        private static void ForLoopSortedNumbers()
         {
             int count;
             string order;
@@ -183,33 +184,37 @@ namespace MyActivities_Reveche
             Console.Write("Enter number of loop/s: ");
             count = int.Parse(Console.ReadLine());
             Console.Write("In what order would you like to display? [asc/desc]: ");
-            order = Console.ReadLine().ToLower();
+            order = Console.ReadLine()?.ToLower();
 
-            if (order == "asc")
+            switch (order)
             {
-                for (int i = 1; i <= count; i++)
+                case "asc":
                 {
-                    Console.Write((i < count) ? i + ", " : i.ToString());
+                    for (int i = 1; i <= count; i++)
+                    {
+                        Console.Write((i < count) ? i + ", " : i.ToString());
+                    }
+                    Console.WriteLine();
+                    break;
                 }
-                Console.WriteLine();
-            }
-            else if (order == "desc")
-            {
-                for (int i = count; i > 0; i--)
+                case "desc":
                 {
-                    Console.Write((i > 1) ? i + ", " : i.ToString());
+                    for (int i = count; i > 0; i--)
+                    {
+                        Console.Write((i > 1) ? i + ", " : i.ToString());
+                    }
+                    Console.WriteLine();
+                    break;
                 }
-                Console.WriteLine();
-            }
-            else
-            {
-                Console.WriteLine("Invalid Sort Direction.");
+                default:
+                    Console.WriteLine("Invalid Sort Direction.");
+                    break;
             }
         }
 
-        static void ForLoopOddEven()
+        private static void ForLoopOddEven()
         {
-            int n, number, evenCount = 0, oddCount = 0, sumEven = 0, sumOdd = 0;
+            int n, evenCount = 0, oddCount = 0, sumEven = 0, sumOdd = 0;
             string oddNumbers = "", evenNumbers = "";
 
             Console.WriteLine("Welcome to my Odd-Even-inator!\n");
@@ -220,7 +225,7 @@ namespace MyActivities_Reveche
             for (int i = 0; i < n; i++)
             {
                 Console.Write("> ");
-                number = int.Parse(Console.ReadLine());
+                var number = int.Parse(Console.ReadLine());
 
                 if (number < 1)
                 {
@@ -234,7 +239,7 @@ namespace MyActivities_Reveche
                     sumEven += number;
                     evenNumbers += $"{number + (((evenCount + oddCount) < n - 1) ? ", " : "")}";
                 }
-                else 
+                else
                 {
                     oddCount++;
                     sumOdd += number;
@@ -249,92 +254,92 @@ namespace MyActivities_Reveche
 
         }
 
-        static void WhileLoopSortedNumbers()
+        private static void WhileLoopSortedNumbers()
         {
-            int count;
+            int i, count;
             string order;
 
             Console.Write("Enter number of loop/s: ");
             count = int.Parse(Console.ReadLine());
             Console.Write("In what order would you like to display? [asc/desc]: ");
-            order = Console.ReadLine().ToLower();
+            order = Console.ReadLine()?.ToLower();
 
-            if (order == "asc")
+            switch (order)
             {
-                int i = 1;
-                while (i <= count)
-                {
-                    Console.Write((i < count) ? i + ", " : i.ToString());
-                    i++;
-                }
-                Console.WriteLine();
-            }
-            else if (order == "desc")
-            {
-                int i = count;
-                while (i > 0)
-                {
-                    Console.Write((i > 1) ? i + ", " : i.ToString());
-                    i++;
-                }
-                Console.WriteLine();
-            }
-            else
-            {
-                Console.WriteLine("Invalid Sort Direction.");
+                case "asc":
+                    i = 1;
+                    while (i <= count)
+                    {
+                        Console.Write((i < count) ? i + ", " : i.ToString());
+                        i++;
+                    }
+                    Console.WriteLine();
+                    break;
+                case "desc":
+                    i = count;
+                    while (i > 0)
+                    {
+                        Console.Write((i > 1) ? i + ", " : i.ToString());
+                        i++;
+                    }
+                    Console.WriteLine();
+                    break;
+                default:
+                    Console.WriteLine("Invalid Sort Direction.");
+                    break;
             }
         }
 
-        static void DoWhileLoopSortedNumbers()
+        private static void DoWhileLoopSortedNumbers()
         {
-            
-            int count;
+
+            int i, count;
             string order;
 
             Console.Write("Enter number of loop/s: ");
             count = int.Parse(Console.ReadLine());
             Console.Write("In what order would you like to display? [asc/desc]: ");
-            order = Console.ReadLine().ToLower();
+            order = Console.ReadLine()?.ToLower();
 
-            if (order == "asc")
+            switch (order)
             {
-                int i = 1;
-                do
-                {
-                    Console.Write((i < count) ? i + ", " : i.ToString());
-                    i++;
-                }
-                while (i <= count);
-                Console.WriteLine();
-            }
-            else if (order == "desc")
-            {
-                int i = count;
-                do
-                {
-                    Console.Write((i > 1) ? i + ", " : i.ToString());
-                    i--;
-                }
-                while (i > 0);
-                Console.WriteLine();
-            }
-            else
-            {
-                Console.WriteLine("Invalid Sort Direction.");
+                case "asc":
+                    i = 1;
+                    do
+                    {
+                        Console.Write((i < count) ? i + ", " : i.ToString());
+                        i++;
+                    }
+                    while (i <= count);
+                    Console.WriteLine();
+                    break;
+                case "desc":
+                    i = count;
+                    do
+                    {
+                        Console.Write((i > 1) ? i + ", " : i.ToString());
+                        i--;
+                    }
+                    while (i > 0);
+                    Console.WriteLine();
+                    break;
+                default:
+                    Console.WriteLine("Invalid Sort Direction.");
+                    break;
             }
         }
 
-        static void QuizTwoLoops()
+        private static void QuizTwoLoops()
         {
-            string desc = " ";
-            string oddEvenResult = "";
+            var desc = "";
+            var oddEvenResult = "";
 
             Console.WriteLine("Numberino Machino\n");
             Console.Write("Enter a number: ");
-            int num = int.Parse(Console.ReadLine());
+            var num = int.Parse(Console.ReadLine() ?? string.Empty);
 
             Console.WriteLine();
-            for (int i = 1; i <= num; i++)
+            for (var i = 1; i <= num; i++)
             {
                 Console.Write($"{i} ");
                 if (i != num) desc = $"{i} {desc}";
@@ -342,17 +347,15 @@ namespace MyActivities_Reveche
 
             Console.Write($"{desc}\n\n");
 
-            for (int i = 1; i <= num * 2; i++)
-            {
-                if (i % 2 == 0) oddEvenResult += ((i == 2) ? "" : " ") + ((i - 1) + i);
-            }
+            for (var i = 1; i <= num * 2; i++)
+                if (i % 2 == 0) oddEvenResult += ((i == 2) ? "" : " ") + (i - 1 + i);
+
             Console.WriteLine(oddEvenResult);
             Console.WriteLine();
         }
 
-        static void BMICalculator()
+        private static void BmiCalculator()
         {
-            
             Console.WriteLine("Welcome to Dr. Lester Papadopoulos' Wonderful BMI Calculator!");
 
             while (true)
@@ -372,33 +375,22 @@ namespace MyActivities_Reveche
                     Console.Write("Input your weight (kg): ");
                     if (double.TryParse(Console.ReadLine(), out weight)) break;
                 }
-
-                double bmi = (((weight * 2.2) / Math.Pow(height * 12, 2)) * 703);
+                var bmi = weight * 2.2 / Math.Pow(height * 12, 2) * 703;
 
                 Console.WriteLine($"\nYour BMI is {bmi:N2}.");
                 Console.Write("Your status is ");
 
-                if (bmi < 18.5) 
-                {
-                    Console.Write("Underweight.\n");
-                }
-                else if (bmi < 25)
-                {
-                    Console.Write("Normal.\n");
-                }
-                else if (bmi < 40)
-                {
-                    Console.Write("Overweight.\n");
-                }
-                else
-                {
-                    Console.Write("Obese.\n");
-                }
+                if (bmi < 18.5) Console.Write("Underweight.\n");
+                else if (bmi < 25) Console.Write("Normal.\n");
+                else if (bmi < 40) Console.Write("Overweight.\n");
+                else Console.Write("Obese.\n");
 
                 Console.WriteLine("\nPress N if you don't want to continue...");
                 var key = Console.ReadKey();
 
                 if (key.Key == ConsoleKey.N) break;
+
+                Console.Clear();
             }
         }
 

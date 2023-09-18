@@ -4,37 +4,34 @@ using System.Reflection;
 
 namespace MyActivities_Reveche
 {
-    class Selector
+    public static class Selector
     {
-        public static List<Action> availableMethods = new List<Action>();
-        public static List<Action> availableAltMethods = new List<Action>();
+        public static readonly List<Action> AvailableMethods = new List<Action>();
+        public static readonly List<Action> AvailableAltMethods = new List<Action>();
 
         internal static void Start(int selectedMethod = -1)
         {
             Console.Title = "MyActivities_Reveche";
-            if (selectedMethod == -1) DisplayMenu(availableMethods);
-            else 
-            {
-                availableMethods[selectedMethod].Invoke();
-            }
+            if (selectedMethod == -1) DisplayMenu(AvailableMethods);
+            else AvailableMethods[selectedMethod].Invoke();
         }
 
         public static void AltMethods()
         {
-            DisplayMenu(availableAltMethods, true);
+            DisplayMenu(AvailableAltMethods, true);
         }
 
-        private static void DisplayMenu(List<Action> methodList, bool isAlt = false)
+        private static void DisplayMenu(IReadOnlyList<Action> methodList, bool isAlt = false)
         {
             int index;
-            string alt = (isAlt) ? "Alt " : "";
+            var alt = (isAlt) ? "Alt " : "";
 
             Console.WriteLine($"Welcome to Klein's CSharp {alt}Activities!\n");
             Console.WriteLine($"{alt}Methods: ");
 
-            for (int i = 0; i < methodList.Count; i++)
+            for (var i = 0; i < methodList.Count; i++)
             {
-                string methodName = methodList[i].GetMethodInfo().ToString().Replace("Void ", "");
+                var methodName = methodList[i].GetMethodInfo().ToString().Replace("Void ", "");
                 Console.WriteLine($"  [{i}] {methodName}");
             }
 
