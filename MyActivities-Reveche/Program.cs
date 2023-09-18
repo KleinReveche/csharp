@@ -6,23 +6,35 @@ namespace MyActivities_Reveche
     {
         static void Main(string[] args)
         {
-            //Arithmetic();
-            //Grade();
-            //HighestLowest();
-            //ForLoop();
-            //ForLoopSortedNumbers();
-            //ForLoopOddEven();
-            //WhileLoopSortedNumbers();
-            //DoWhileLoopSortedNumbers();
-            QuizTwo();
+            // Modify this to directly run the method you want.
+            int selectedMethod = -1; // Change this to always be -1 when done.
+
+            var methods = Selector.availableMethods;
+            var altMethods = Selector.availableAltMethods;
+
+            // Add methods here to be invoked.
+            methods.Add(Arithmetic);
+            methods.Add(Grade);
+            methods.Add(HighestLowest);
+            methods.Add(ForLoop);
+            methods.Add(ForLoopSortedNumbers);
+            methods.Add(ForLoopOddEven);
+            methods.Add(WhileLoopSortedNumbers);
+            methods.Add(DoWhileLoopSortedNumbers);
+            methods.Add(QuizTwoLoops);
 
             // These are extra alternative implementations of the activities
-            //Alt.HighestLowestArrays();
-            //Alt.HighestLowestLists();
-            //Alt.ForLoopWithCount();
-            //Alt.ForLoopSortedNumbersSafe();
-            //Alt.ForLoopOddEven2();
-
+            methods.Add(Selector.AltMethods);
+            altMethods.Add(Alt.HighestLowestArrays);
+            altMethods.Add(Alt.HighestLowestLists);
+            altMethods.Add(Alt.ForLoopWithCount);
+            altMethods.Add(Alt.ForLoopSortedNumbersSafe);
+            altMethods.Add(Alt.ForLoopOddEven2);
+            
+            if ( selectedMethod != -1 || (args.Length > 0 && int.TryParse(args[0], out selectedMethod)))
+                Selector.Start(selectedMethod);
+            else
+                Selector.Start();
         }
         static void Arithmetic()
         {
@@ -308,27 +320,30 @@ namespace MyActivities_Reveche
             }
         }
 
-        static void QuizTwo()
+        static void QuizTwoLoops()
         {
             string desc = " ";
             string oddEvenResult = "";
 
+            Console.WriteLine("Numberino Machino\n");
             Console.Write("Enter a number: ");
             int num = int.Parse(Console.ReadLine());
 
+            Console.WriteLine();
             for (int i = 1; i <= num; i++)
             {
                 Console.Write($"{i} ");
                 if (i != num) desc = $"{i} {desc}";
             }
 
-            Console.Write($"{desc}\n");
+            Console.Write($"{desc}\n\n");
 
             for (int i = 1; i <= num * 2; i++)
             {
                 if (i % 2 == 0) oddEvenResult += ((i == 2) ? "" : " ") + ((i - 1) + i);
             }
             Console.WriteLine(oddEvenResult);
+            Console.WriteLine();
         }
     }
 }

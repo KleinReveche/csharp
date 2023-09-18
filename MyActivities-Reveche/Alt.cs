@@ -51,17 +51,18 @@ namespace MyActivities_Reveche
 
         public static void ForLoopWithCount()
         {
-            int count = 0, sum = 0;
+            int sum = 0;
             Console.WriteLine("Welcome to Average Plus!\n");
 
             Console.Write("Enter how many would you like to average: ");
-            count = int.Parse(Console.ReadLine());
+            int count = int.Parse(Console.ReadLine());
 
             Console.WriteLine("\nEnter {0} Numbers:", count);
             for (int i = 0; i < count; i++)
             {
                 Console.Write("> ");
-                sum = sum + int.Parse(Console.ReadLine());
+                var num = int.Parse(Console.ReadLine());
+                sum += num;
             }
             Console.WriteLine("\nThe Average is {0}", (float) sum / count);
         }
@@ -106,7 +107,8 @@ namespace MyActivities_Reveche
 
         public static void ForLoopOddEven2()
         {
-            int n = 0, number = 0, evenCount = 0, oddCount = 0, sumEven = 0, sumOdd = 0;
+            int n = 0, number, evenCount = 0, oddCount = 0, sumEven = 0, sumOdd = 0;
+            string oddNumbers = "", evenNumbers = "";
             bool isValid = false;
 
             Console.WriteLine("Welcome to my Odd-Even-inator!\n");
@@ -138,18 +140,20 @@ namespace MyActivities_Reveche
                 {
                     evenCount++;
                     sumEven += number;
+                    evenNumbers += $"{number + (((evenCount + oddCount) < n - 1) ? ", " : "")}";
                 }
                 else
                 {
                     oddCount++;
                     sumOdd += number;
+                    oddNumbers += $"{number + (((evenCount + oddCount) < n - 1) ? ", " : "")}";
                 }
             }
 
-            Console.WriteLine($"\nThe # of even numbers is {evenCount}");
+            Console.WriteLine($"\nThe # of even numbers is {evenCount}, which is [{evenNumbers}]");
             Console.WriteLine($"The sum of even numbers is {sumEven}");
-            Console.WriteLine($"The # of odd numbers is {oddCount}");
-            Console.WriteLine($"The sum of odd numbers is {sumOdd}");
+            Console.WriteLine($"The # of odd numbers is {oddCount}, which is [{oddNumbers}]");
+            Console.WriteLine($"The sum of odd numbers is {sumOdd}\n");
 
         }
     }

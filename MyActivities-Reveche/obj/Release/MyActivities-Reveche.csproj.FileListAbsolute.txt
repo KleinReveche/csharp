@@ -1,0 +1,8 @@
+C:\Users\COLLEGE\Documents\Klein Rev\MyActivities-Reveche\bin\Release\MyActivities-Reveche.exe.config
+C:\Users\COLLEGE\Documents\Klein Rev\MyActivities-Reveche\bin\Release\MyActivities-Reveche.exe
+C:\Users\COLLEGE\Documents\Klein Rev\MyActivities-Reveche\bin\Release\MyActivities-Reveche.pdb
+C:\Users\COLLEGE\Documents\Klein Rev\MyActivities-Reveche\obj\Release\MyActivities-Reveche.csproj.AssemblyReference.cache
+C:\Users\COLLEGE\Documents\Klein Rev\MyActivities-Reveche\obj\Release\MyActivities-Reveche.csproj.SuggestedBindingRedirects.cache
+C:\Users\COLLEGE\Documents\Klein Rev\MyActivities-Reveche\obj\Release\MyActivities-Reveche.csproj.CoreCompileInputs.cache
+C:\Users\COLLEGE\Documents\Klein Rev\MyActivities-Reveche\obj\Release\MyActivities-Reveche.exe
+C:\Users\COLLEGE\Documents\Klein Rev\MyActivities-Reveche\obj\Release\MyActivities-Reveche.pdb
