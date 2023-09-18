@@ -13,7 +13,8 @@ namespace MyActivities_Reveche
             //ForLoopSortedNumbers();
             //ForLoopOddEven();
             //WhileLoopSortedNumbers();
-            DoWhileLoopSortedNumbers();
+            //DoWhileLoopSortedNumbers();
+            QuizTwo();
 
             // These are extra alternative implementations of the activities
             //Alt.HighestLowestArrays();
@@ -305,6 +306,29 @@ namespace MyActivities_Reveche
             {
                 Console.WriteLine("Invalid Sort Direction.");
             }
+        }
+
+        static void QuizTwo()
+        {
+            string desc = " ";
+            string oddEvenResult = "";
+
+            Console.Write("Enter a number: ");
+            int num = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= num; i++)
+            {
+                Console.Write($"{i} ");
+                if (i != num) desc = $"{i} {desc}";
+            }
+
+            Console.Write($"{desc}\n");
+
+            for (int i = 1; i <= num * 2; i++)
+            {
+                if (i % 2 == 0) oddEvenResult += ((i == 2) ? "" : " ") + ((i - 1) + i);
+            }
+            Console.WriteLine(oddEvenResult);
         }
     }
 }
