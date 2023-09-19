@@ -1,0 +1,7 @@
+D:\Klein\Documents\Projects\CSharp\LoopsAndDebugger\bin\Debug\LoopsAndDebugger.exe.config
+D:\Klein\Documents\Projects\CSharp\LoopsAndDebugger\bin\Debug\LoopsAndDebugger.exe
+D:\Klein\Documents\Projects\CSharp\LoopsAndDebugger\bin\Debug\LoopsAndDebugger.pdb
+D:\Klein\Documents\Projects\CSharp\LoopsAndDebugger\obj\Debug\LoopsAndDebugger.csproj.AssemblyReference.cache
+D:\Klein\Documents\Projects\CSharp\LoopsAndDebugger\obj\Debug\LoopsAndDebugger.csproj.CoreCompileInputs.cache
+D:\Klein\Documents\Projects\CSharp\LoopsAndDebugger\obj\Debug\LoopsAndDebugger.exe
+D:\Klein\Documents\Projects\CSharp\LoopsAndDebugger\obj\Debug\LoopsAndDebugger.pdb
