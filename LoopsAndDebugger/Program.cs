@@ -11,7 +11,8 @@ namespace LoopsAndDebugger
             //WhileLoop();
             //DoWhileLoop();
             //FizzBuzzExample();
-            Solution();
+            //Solution();
+            Solution2();
         }
 
         static void ForLoop()
@@ -91,6 +92,19 @@ namespace LoopsAndDebugger
                     oddEvenResult += $"{i - 1 + i}, ";
             }
             Console.WriteLine(oddEvenResult.Substring(0, oddEvenResult.Length - 2));
+        }
+
+        static void Solution2()
+        {
+            var num = 5;
+            int x = 1, y = 2;
+
+            while (x <= (num * 2))
+            {
+                Console.Write("{0} ", x + y);
+                x = x + 2; // x += 2
+                y = y + 2; // y += 2
+            }
         }
     }
 }
