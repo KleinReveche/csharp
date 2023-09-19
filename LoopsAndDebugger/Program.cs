@@ -24,6 +24,13 @@ namespace LoopsAndDebugger
 
         static void WhileLoop()
         {
+            int i = 1;
+            while (i <= 5)
+            {
+                Console.WriteLine(i);
+            }
+
+            // Another Sample Implementation
             while (true)
             {
                 Console.Write("Give a number: ");
@@ -32,12 +39,18 @@ namespace LoopsAndDebugger
                 if (input == 5)
                     break;
             }
-
         }
 
         static void DoWhileLoop()
         {
+            int i = 1;
+            do
+            {
+                Console.WriteLine(i);
+            }
+            while (i <= 5) ;
 
+            // Another Sample Implementation
             do
             {
                 Console.Write("Give a number: ");
