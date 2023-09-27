@@ -8,6 +8,7 @@ namespace MyActivities_Reveche
     {
         public static readonly List<Action> AvailableMethods = new List<Action>();
         public static readonly List<Action> AvailableAltMethods = new List<Action>();
+        public static readonly List<Action> AvailablePlaygroundMethods = new List<Action>();
 
         internal static void Start(int selectedMethod = -1)
         {
@@ -18,16 +19,22 @@ namespace MyActivities_Reveche
 
         public static void AltMethods()
         {
-            DisplayMenu(AvailableAltMethods, true);
+            DisplayMenu(AvailableAltMethods, isAlt:true);
+        }
+        
+        public static void PlaygroundMethods()
+        {
+            DisplayMenu(AvailablePlaygroundMethods, isPlayground:true);
         }
 
-        private static void DisplayMenu(IReadOnlyList<Action> methodList, bool isAlt = false)
+        private static void DisplayMenu(IReadOnlyList<Action> methodList, bool isAlt = false, bool isPlayground = false)
         {
             int index;
             var alt = (isAlt) ? "Alt " : "";
+            var playground = (isPlayground) ? "Playground " : "";
 
-            Console.WriteLine($"Welcome to Klein's CSharp {alt}Activities!\n");
-            Console.WriteLine($"{alt}Methods: ");
+            Console.WriteLine($"Welcome to Klein's CSharp {alt}{playground}Activities!\n");
+            Console.WriteLine($"{alt}{playground}Methods: ");
 
             for (var i = 0; i < methodList.Count; i++)
             {
