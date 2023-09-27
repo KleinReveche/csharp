@@ -108,7 +108,7 @@ namespace MyActivities_Reveche
         }
         private static void NestedLoopWithInputAndWhileAndColour()
         {
-            var size = 0;
+            int size;
             while (true)
             {
                 
@@ -136,7 +136,7 @@ namespace MyActivities_Reveche
         
         private static void NestedLoopWithInputAndWhileAndColourEdgeOnly()
         {
-            var size = 0;
+            int size;
             while (true)
             {
                 

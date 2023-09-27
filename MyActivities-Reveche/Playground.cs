@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace MyActivities_Reveche
 {
@@ -18,7 +19,7 @@ namespace MyActivities_Reveche
                     Console.ForegroundColor = ConsoleColor.Black;
                     var currentProduct = row * col;
                     var padding = maxProduct.ToString().Length - currentProduct.ToString().Length + 1;
-                    Console.Write((col == 1 ? $"{row}" : $"{currentProduct}") + new string(' ', padding / 2));
+                    Console.Write((col == 1 ? $"{row}" : $"{currentProduct}") + new string(' ', padding));
                 }
                 Console.WriteLine();
             }
@@ -55,48 +56,69 @@ namespace MyActivities_Reveche
 
         public static void Bingo()
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
             const string bingo = "BINGO";
             const int size = 6;
-            var random = new Random();
-
+            var numberList = new List<int>();
+            
             for (var row = 1; row <= size; row++)
             {
                 for (var col = 1; col <= size - 1; col++)
                 {
+                    Console.BackgroundColor = col % 2 == 0 ? ConsoleColor.Cyan : ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    
                     switch (row)
                     {
                         case 1:
-                            Console.Write($"  {bingo[col - 1]}  ");
+                            Console.Write($" {bingo[col - 1]}  ");
                             continue;
-                        case 3 when col == 3:
-                            Console.Write(" F ");
-                            break;
+                        case 4 when col == 3:
+                            Console.Write(" ★★ ");
+                            continue;
                     }
 
-                    var number = 0;
-                    switch (col)
-                    {
-                        case 1:
-                            number = random.Next(1, 15);
-                            break;
-                        case 2:
-                            number = random.Next(16, 30);
-                            break;
-                        case 3:
-                            number = random.Next(31, 45);
-                            break;
-                        case 4:
-                            number = random.Next(46, 60);
-                            break;
-                        case 5:
-                            number = random.Next(61, 75);
-                            break;
-                    }
-                    
-                    Console.Write($" {number} ");
+                    var number = BingoAlgorithm(col, numberList);
+
+                    Console.Write($" {(number < 10 ? " " : "")}{number} ");
                 }
                 Console.WriteLine();
+                Console.ResetColor();
             }
+        }
+        
+        private static int BingoAlgorithm(int col, ICollection<int> numberList)
+        {
+            var random = new Random();
+            var number = 0;
+
+            while (true)
+            {
+                switch (col)
+                {
+                    case 1:
+                        number = random.Next(1, 15);
+                        break;
+                    case 2:
+                        number = random.Next(16, 30);
+                        break;
+                    case 3:
+                        number = random.Next(31, 45);
+                        break;
+                    case 4:
+                        number = random.Next(46, 60);
+                        break;
+                    case 5:
+                        number = random.Next(61, 75);
+                        break;
+                }
+
+                if (numberList.Contains(number)) continue;
+                numberList.Add(number);
+                break;
+            }
+
+            return number;
         }
     }
 }
