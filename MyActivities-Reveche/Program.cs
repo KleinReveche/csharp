@@ -7,7 +7,7 @@ namespace MyActivities_Reveche
         public static void Main(string[] args)
         {
             // Modify this to directly run the method you want.
-            var selectedMethod = -1; // Change this to always be -1 when done.
+            var selectedMethod = 16; // Change this to always be -1 when done.
 
             var methods = Selector.AvailableMethods;
             var altMethods = Selector.AvailableAltMethods;
@@ -30,6 +30,7 @@ namespace MyActivities_Reveche
             methods.Add(NestedLoopWithInputAndWhileAndColour);
             methods.Add(NestedLoopWithInputAndWhileAndColourEdgeOnly);
             methods.Add(ConsoleSetPosition);
+            methods.Add(ChristmasTreeMaker.MakeChristmasTree);
 
             // These are extra alternative implementations of the activities
             methods.Add(Selector.AltMethods);

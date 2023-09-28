@@ -44,7 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alt.cs" />
+    <Compile Include="ChristmasTreeMaker.cs" />
     <Compile Include="ComPro1Midterm.cs" />
+    <Compile Include="Inputs.cs" />
     <Compile Include="Playground.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
