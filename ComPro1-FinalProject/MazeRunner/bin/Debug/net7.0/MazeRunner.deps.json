@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "MazeRunner/1.0.0": {
+        "dependencies": {
+          "WorcleQuest": "1.0.0"
+        },
+        "runtime": {
+          "MazeRunner.dll": {}
+        }
+      },
+      "WorcleQuest/1.0.0": {
+        "runtime": {
+          "WorcleQuest.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MazeRunner/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WorcleQuest/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

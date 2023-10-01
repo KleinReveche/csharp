@@ -1,0 +1,122 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Klein\\Documents\\Projects\\CSharp\\ComPro1-FinalProject\\Reveche.MazeRunner\\Reveche.MazeRunner.csproj": {}
+  },
+  "projects": {
+    "D:\\Klein\\Documents\\Projects\\CSharp\\ComPro1-FinalProject\\Reveche.MazeRunner\\Reveche.MazeRunner.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Klein\\Documents\\Projects\\CSharp\\ComPro1-FinalProject\\Reveche.MazeRunner\\Reveche.MazeRunner.csproj",
+        "projectName": "MazeRunner",
+        "projectPath": "D:\\Klein\\Documents\\Projects\\CSharp\\ComPro1-FinalProject\\Reveche.MazeRunner\\Reveche.MazeRunner.csproj",
+        "packagesPath": "C:\\Users\\Klein\\.nuget\\packages\\",
+        "outputPath": "D:\\Klein\\Documents\\Projects\\CSharp\\ComPro1-FinalProject\\Reveche.MazeRunner\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Klein\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "D:\\Klein\\Documents\\Projects\\CSharp\\ComPro1-FinalProject\\WorcleQuest\\WorcleQuest.csproj": {
+                "projectPath": "D:\\Klein\\Documents\\Projects\\CSharp\\ComPro1-FinalProject\\WorcleQuest\\WorcleQuest.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Klein\\Documents\\Projects\\CSharp\\ComPro1-FinalProject\\WorcleQuest\\WorcleQuest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Klein\\Documents\\Projects\\CSharp\\ComPro1-FinalProject\\WorcleQuest\\WorcleQuest.csproj",
+        "projectName": "WorcleQuest",
+        "projectPath": "D:\\Klein\\Documents\\Projects\\CSharp\\ComPro1-FinalProject\\WorcleQuest\\WorcleQuest.csproj",
+        "packagesPath": "C:\\Users\\Klein\\.nuget\\packages\\",
+        "outputPath": "D:\\Klein\\Documents\\Projects\\CSharp\\ComPro1-FinalProject\\WorcleQuest\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Klein\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
