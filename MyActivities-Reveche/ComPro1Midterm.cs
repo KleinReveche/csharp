@@ -5,7 +5,7 @@ namespace MyActivities_Reveche
 {
     public static partial class Program
     {
-        private static void Arithmetic()
+        public static void Arithmetic()
         {
             int x, y;
             float result = 0;
@@ -52,7 +52,7 @@ namespace MyActivities_Reveche
                 Console.WriteLine("The operator is invalid.");
         }
 
-        private static void Grade()
+        public static void Grade()
         {
             string fullName;
             string equivGrade;
@@ -91,7 +91,7 @@ namespace MyActivities_Reveche
             Console.WriteLine("{0}, your grade is {1}.", fullName, equivGrade);
         }
 
-        private static void HighestLowest()
+        public static void HighestLowest()
         {
             // Basic
             int a, b, c, d, e;
@@ -125,7 +125,7 @@ namespace MyActivities_Reveche
             Console.WriteLine("The lowest value is {0}.", min);
         }
 
-        private static void ForLoop()
+        public static void ForLoop()
         {
             int count = 5, sum = 0;
 
@@ -140,7 +140,7 @@ namespace MyActivities_Reveche
             Console.WriteLine("\nThe Average is {0}", (float)sum / count);
         }
 
-        private static void ForLoopSortedNumbers()
+        public static void ForLoopSortedNumbers()
         {
             int count;
             string order;
@@ -178,7 +178,7 @@ namespace MyActivities_Reveche
             }
         }
 
-        private static void ForLoopOddEven()
+        public static void ForLoopOddEven()
         {
             int n, evenCount = 0, oddCount = 0, sumEven = 0, sumOdd = 0;
             string oddNumbers = "", evenNumbers = "";
@@ -219,7 +219,7 @@ namespace MyActivities_Reveche
             Console.WriteLine($"The sum of odd numbers is {sumOdd}\n");
         }
 
-        private static void WhileLoopSortedNumbers()
+        public static void WhileLoopSortedNumbers()
         {
             int i, count;
             string order;
@@ -257,7 +257,7 @@ namespace MyActivities_Reveche
             }
         }
 
-        private static void DoWhileLoopSortedNumbers()
+        public static void DoWhileLoopSortedNumbers()
         {
             int i, count;
             string order;
@@ -295,7 +295,7 @@ namespace MyActivities_Reveche
             }
         }
 
-        private static void QuizTwoLoops()
+        public static void QuizTwoLoops()
         {
             var desc = "";
             var oddEvenResult = "";
@@ -321,7 +321,7 @@ namespace MyActivities_Reveche
             Console.WriteLine();
         }
 
-        private static void BmiCalculator()
+        public static void BmiCalculator()
         {
             Console.WriteLine("Welcome to Dr. Lester Papadopoulos' Wonderful BMI Calculator!");
 

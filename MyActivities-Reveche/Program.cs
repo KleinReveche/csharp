@@ -4,60 +4,24 @@ namespace MyActivities_Reveche
 {
     public static partial class Program
     {
-        public static void Main(string[] args)
+        public static void Main(string[] args) 
         {
+            Console.Clear();
+            Selector.RegisterMethods();
+            
             // Modify this to directly run the method you want.
-            var selectedMethod = 16; // Change this to always be -1 when done.
+            var selectedMethod = -1; // Change this to always be -1 when done.
 
-            var methods = Selector.AvailableMethods;
-            var altMethods = Selector.AvailableAltMethods;
-            var playgroundMethods = Selector.AvailablePlaygroundMethods;
-
-            // Add methods here to be invoked.
-            methods.Add(Arithmetic);
-            methods.Add(Grade);
-            methods.Add(HighestLowest);
-            methods.Add(ForLoop);
-            methods.Add(ForLoopSortedNumbers);
-            methods.Add(ForLoopOddEven);
-            methods.Add(WhileLoopSortedNumbers);
-            methods.Add(DoWhileLoopSortedNumbers);
-            methods.Add(QuizTwoLoops);
-            methods.Add(BmiCalculator);
-            methods.Add(NestedLoop);
-            methods.Add(NestedLoopWithInput);
-            methods.Add(NestedLoopWithInputAndWhile);
-            methods.Add(NestedLoopWithInputAndWhileAndColour);
-            methods.Add(NestedLoopWithInputAndWhileAndColourEdgeOnly);
-            methods.Add(ConsoleSetPosition);
-            methods.Add(ChristmasTreeMaker.MakeChristmasTree);
-
-            // These are extra alternative implementations of the activities
-            methods.Add(Selector.AltMethods);
-            altMethods.Add(Alt.HighestLowestArrays);
-            altMethods.Add(Alt.HighestLowestLists);
-            altMethods.Add(Alt.ForLoopWithCount);
-            altMethods.Add(Alt.ForLoopSortedNumbersSafe);
-            altMethods.Add(Alt.ForLoopOddEven2);
-            
-            // These are the things that I tinker with
-            methods.Add(Selector.PlaygroundMethods);
-            playgroundMethods.Add(Playground.MultiplicationTable);
-            playgroundMethods.Add(Playground.Pyramid);
-            playgroundMethods.Add(Playground.Bingo);
-            
-
+            // ReSharper disable once ConditionIsAlwaysTrueOrFalse
             if (selectedMethod != -1 || (args.Length > 0 && int.TryParse(args[0], out selectedMethod)))
                 Selector.Start(selectedMethod);
             else
                 Selector.Start();
 
-            // This prevents the app from immediately closing when run from the terminal.
-            Console.Write("Press any key to exit . . .");
             Console.ReadKey();
         }
 
-        private static void NestedLoop()
+        public static void NestedLoop()
         {
             for (var row = 1; row <= 5; row++)
             {
@@ -67,7 +31,7 @@ namespace MyActivities_Reveche
             }
         }
 
-        private static void NestedLoopWithInput()
+        public static void NestedLoopWithInput()
         {
             Console.Write("Enter number table size: ");
             var size = int.Parse(Console.ReadLine() ?? "0");
@@ -83,7 +47,7 @@ namespace MyActivities_Reveche
             }
         }
 
-        private static void NestedLoopWithInputAndWhile()
+        public static void NestedLoopWithInputAndWhile()
         {
             while (true)
             {
@@ -107,7 +71,7 @@ namespace MyActivities_Reveche
                 break;
             }
         }
-        private static void NestedLoopWithInputAndWhileAndColour()
+        public static void NestedLoopWithInputAndWhileAndColour()
         {
             int size;
             while (true)
@@ -135,7 +99,7 @@ namespace MyActivities_Reveche
             Console.ResetColor();
         }
         
-        private static void NestedLoopWithInputAndWhileAndColourEdgeOnly()
+        public static void NestedLoopWithInputAndWhileAndColourEdgeOnly()
         {
             int size;
             while (true)
@@ -166,7 +130,7 @@ namespace MyActivities_Reveche
             Console.ResetColor();
         }
 
-        private static void ConsoleSetPosition()
+        public static void ConsoleSetPosition()
         {
             for (var x = 1; x <= 5; x++)
             {
@@ -177,6 +141,90 @@ namespace MyActivities_Reveche
                 }
             }
             Console.WriteLine();
+        }
+        
+        
+        public static void WhileNestedLoops()
+        {
+            const int size = 5;
+            var row = 1;
+
+            while (row <= size)
+            {
+                var col = 1;
+                while (col <= size)
+                {
+                    Console.Write($"{Math.Pow(col, col)} ");
+                    col++;
+                }
+                Console.WriteLine();
+                row++;
+            }
+        }
+        
+        public static void MultiplicationTableCursorPos()
+        {
+            const int size = 10;
+            var row = 1; 
+            while (row <= size)
+            {
+                var col = 1;
+                while (col <= size)
+                {
+                    var currentProduct = row * col;
+                    
+                    Console.SetCursorPosition(col * 3, row);
+                    Console.Write($"{currentProduct}");
+                    col++;
+                }
+                Console.WriteLine();
+                row++;
+            }
+        }
+
+        public static void ForLoopTable()
+        {
+            const int size = 5;
+            int oddSum = 0, evenSum = 0, row1 = 0, row2 = 0, row3 = 0, row4 = 0, row5 = 0;
+
+            for (var row = 1; row <= size; row++)
+            {
+                int odd = 0, even = 0;
+                
+                for (var col = 1; col <= size; col++)
+                {
+                    Console.Write($"{col}  ");
+                    
+                    if (col % 2 == 0)
+                        even += col;
+                    else
+                        odd += col;
+
+                    switch (col)
+                    {
+                        case 1:
+                            row1 += col;
+                            break;
+                        case 2:
+                            row2 += col;
+                            break;
+                        case 3:
+                            row3 += col;
+                            break;
+                        case 4:
+                            row4 += col;
+                            break;
+                        case 5:
+                            row5 += col;
+                            break;
+                    }
+                }
+                
+                Console.WriteLine($"{odd}  {even}");
+                evenSum += even;
+                oddSum += odd;
+            }
+            Console.WriteLine($"{row1} {row2} {row3} {row4} {row5} {oddSum} {evenSum}");
         }
     }
 }

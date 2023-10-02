@@ -18,14 +18,14 @@ namespace MyActivities_Reveche
                     Console.BackgroundColor = col % 2 == 0 ? ConsoleColor.Cyan : ConsoleColor.Green;
                     Console.ForegroundColor = ConsoleColor.Black;
                     var currentProduct = row * col;
-                    var padding = maxProduct.ToString().Length - currentProduct.ToString().Length + 1;
-                    Console.Write((col == 1 ? $"{row}" : $"{currentProduct}") + new string(' ', padding));
+                    var padding = maxProduct.ToString().Length - currentProduct.ToString().Length;
+                    Console.Write(($"{currentProduct}") + new string(' ', padding));
                 }
                 Console.WriteLine();
             }
             Console.ResetColor();
         }
-
+        
         public static void Pyramid()
         {
             const int size = 5;

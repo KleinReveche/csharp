@@ -6,9 +6,9 @@ namespace MyActivities_Reveche
 {
     public static class Selector
     {
-        public static readonly List<Action> AvailableMethods = new List<Action>();
-        public static readonly List<Action> AvailableAltMethods = new List<Action>();
-        public static readonly List<Action> AvailablePlaygroundMethods = new List<Action>();
+        private static readonly List<Action> AvailableMethods = new List<Action>();
+        private static readonly List<Action> AvailableAltMethods = new List<Action>();
+        private static readonly List<Action> AvailablePlaygroundMethods = new List<Action>();
 
         internal static void Start(int selectedMethod = -1)
         {
@@ -17,12 +17,12 @@ namespace MyActivities_Reveche
             else AvailableMethods[selectedMethod].Invoke();
         }
 
-        public static void AltMethods()
+        private static void AltMethods()
         {
             DisplayMenu(AvailableAltMethods, isAlt:true);
         }
         
-        public static void PlaygroundMethods()
+        private static void PlaygroundMethods()
         {
             DisplayMenu(AvailablePlaygroundMethods, isPlayground:true);
         }
@@ -52,6 +52,50 @@ namespace MyActivities_Reveche
 
             Console.Clear();
             methodList[index].Invoke();
+        }
+
+        public static void RegisterMethods()
+        {
+            var methods = Selector.AvailableMethods;
+            var altMethods = Selector.AvailableAltMethods;
+            var playgroundMethods = Selector.AvailablePlaygroundMethods;
+
+            // Add methods here to be invoked.
+            methods.Add(Program.Arithmetic);
+            methods.Add(Program.Grade);
+            methods.Add(Program.HighestLowest);
+            methods.Add(Program.ForLoop);
+            methods.Add(Program.ForLoopSortedNumbers);
+            methods.Add(Program.ForLoopOddEven);
+            methods.Add(Program.WhileLoopSortedNumbers);
+            methods.Add(Program.DoWhileLoopSortedNumbers);
+            methods.Add(Program.QuizTwoLoops);
+            methods.Add(Program.BmiCalculator);
+            methods.Add(Program.NestedLoop);
+            methods.Add(Program.NestedLoopWithInput);
+            methods.Add(Program.NestedLoopWithInputAndWhile);
+            methods.Add(Program.NestedLoopWithInputAndWhileAndColour);
+            methods.Add(Program.NestedLoopWithInputAndWhileAndColourEdgeOnly);
+            methods.Add(Program.ConsoleSetPosition);
+            methods.Add(ChristmasTreeMaker.MakeChristmasTree);
+            methods.Add(Program.WhileNestedLoops);
+            methods.Add(Program.MultiplicationTableCursorPos);
+            methods.Add(Program.ForLoopTable);
+
+            // These are extra alternative implementations of the activities
+            methods.Add(Selector.AltMethods);
+            altMethods.Add(Alt.HighestLowestArrays);
+            altMethods.Add(Alt.HighestLowestLists);
+            altMethods.Add(Alt.ForLoopWithCount);
+            altMethods.Add(Alt.ForLoopSortedNumbersSafe);
+            altMethods.Add(Alt.ForLoopOddEven2);
+            
+            // These are the things that I tinker with
+            methods.Add(Selector.PlaygroundMethods);
+            playgroundMethods.Add(Playground.MultiplicationTable);
+            playgroundMethods.Add(Playground.Pyramid);
+            playgroundMethods.Add(Playground.Bingo);
+
         }
     }
 }

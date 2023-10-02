@@ -15,11 +15,18 @@ internal static class GameEngine
             var selectedWord = gameState.SelectedWord;
             var currentGuess = gameState.CurrentGuess;
         
-            CheckLetter(selectedWord, guess, currentGuess);
-            //check if all letters are correct
+            CheckLetters(selectedWord, guess, currentGuess);
+            
+            // Check if all letters are correct
             if (currentGuess.Count == 5 && currentGuess.All(x => x.Item2 == LetterState.Correct))
             {
                 Console.WriteLine("\nYou win!");
+                break;
+            }
+
+            if (gameState.Tries == 5)
+            {
+                Console.WriteLine("\n You Lose!");
                 break;
             }
         
@@ -34,18 +41,39 @@ internal static class GameEngine
         while (true)
         {
             guess = Console.ReadLine() ?? string.Empty;
-            if (guess != string.Empty && guess.Length == 5 && wordsList.Contains(guess)) break;
+            if (guess != string.Empty && guess.Length == 5) break;
         }
 
         gameState.Guess = guess;
     }
     
-    private static void CheckLetter(string word, string guess, ICollection<(char, LetterState)> currentGuess)
+    private static void CheckLetters(string word, string guess, ICollection<(char, LetterState)> currentGuess)
+    {
+        foreach (var letter in guess)
+        {
+            var letterState = LetterState.Wrong;
+            var letterIndex = word.IndexOf(letter);
+            
+            if (letterIndex != -1)
+            {
+                letterState = guess[letterIndex] == letter ? LetterState.Correct : LetterState.Misplaced;
+            }
+
+            Console.BackgroundColor = (ConsoleColor)letterState;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Write(letter);
+            Console.ResetColor();
+
+            currentGuess.Add((letter, letterState));
+        }
+    }
+    
+    private static void CheckLetterOld(string word, string guess, ICollection<(char, LetterState)> currentGuess)
     {
         for (var i = 0; i < guess.Length; i++)
         {
             var remainingGuess = new StringBuilder(guess);
-            var letter = guess[i];
+            var letter = word[i];
             var letterState = LetterState.Wrong;
             var guessIndex = remainingGuess.ToString().IndexOf(letter);
 
@@ -90,7 +118,6 @@ internal static class GameEngine
         Console.Clear();
         PrintPreviousGuesses(gameState);
         PrintCurrentGuess(gameState);
-        GetGuess(gameState);
     }
     
     internal static void PrintGameState(GameState gameState)
