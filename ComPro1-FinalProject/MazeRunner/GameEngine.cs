@@ -32,9 +32,15 @@ public static class Game
 
             if (gameState.PlayerX == gameState.EnemyX && gameState.PlayerY == gameState.EnemyY)
             {
-                //TODO: Add Game-over message. Use Console.SetCursorPosition
                 Console.WriteLine("You died!");
                 gameState.PlayerLife--;
+                gameState.Player = gameState.PlayerLife switch
+                {
+                    2 => "😩",
+                    1 => "🤕",
+                    0 => "👻",
+                    _ => "😀"
+                };
             }
 
             if (gameState.PlayerX == gameState.ExitX && gameState.PlayerY == gameState.ExitY)
@@ -136,7 +142,7 @@ public static class Game
             {
                 if (x == playerX && y == playerY)
                 {
-                    Console.Write("😀"); // Player
+                    Console.Write(gameState.Player); // Player
                 }
                 else if (x == exitX && y == exitY)
                 {
@@ -160,6 +166,7 @@ public static class Game
         var newPlayerX = gameState.PlayerX;
         var newPlayerY = gameState.PlayerY;
 
+        // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
         switch (key)
         {
             case ConsoleKey.UpArrow:
