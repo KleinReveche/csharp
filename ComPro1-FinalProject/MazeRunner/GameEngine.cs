@@ -34,13 +34,6 @@ public static class Game
             {
                 Console.WriteLine("You died!");
                 gameState.PlayerLife--;
-                gameState.Player = gameState.PlayerLife switch
-                {
-                    2 => "😩",
-                    1 => "🤕",
-                    0 => "👻",
-                    _ => "😀"
-                };
             }
 
             if (gameState.PlayerX == gameState.ExitX && gameState.PlayerY == gameState.ExitY)
@@ -135,6 +128,14 @@ public static class Game
         var enemyY = gameState.EnemyY;
         var exitX = gameState.ExitX;
         var exitY = gameState.ExitY;
+        
+        gameState.Player = gameState.PlayerLife switch
+        {
+            2 => "😩",
+            1 => "🤕",
+            0 => "👻",
+            _ => "😀"
+        };
         
         for (var y = 0; y < maze.GetLength(0); y++)
         {
