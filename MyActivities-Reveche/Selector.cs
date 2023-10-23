@@ -81,6 +81,7 @@ namespace MyActivities_Reveche
             methods.Add(Program.WhileNestedLoops);
             methods.Add(Program.MultiplicationTableCursorPos);
             methods.Add(Program.ForLoopTable);
+            methods.Add(Program.PrimeNumbers);
 
             // These are extra alternative implementations of the activities
             methods.Add(Selector.AltMethods);

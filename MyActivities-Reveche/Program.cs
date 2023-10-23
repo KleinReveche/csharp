@@ -226,5 +226,33 @@ namespace MyActivities_Reveche
             }
             Console.WriteLine($"{row1} {row2} {row3} {row4} {row5} {oddSum} {evenSum}");
         }
+
+        public static void PrimeNumbers()
+        {
+            var primeNumbers = "";
+            for (var i = 1; i <= 100; i++)
+            {
+                var isPrime = IsPrime(i);
+                if (isPrime) primeNumbers += $"{i}, ";
+                Console.WriteLine($"{i} is {(isPrime ? "" : "not ")}a prime.");   
+            }
+
+            Console.WriteLine($"\nThe Prime Numbers are: {primeNumbers.TrimEnd(',', ' ')}.");
+            
+            return;
+            
+            bool IsPrime(int number)
+            {
+                if (number <= 1 || (number % 2 == 0 && number != 2) ) return false;
+                if (number is 2 || number is 3) return true;
+
+                for (var i = 3; i * i <= number; i++)
+                {
+                    if (number % i == 0) return false;
+                }
+                
+                return true;
+            }
+        }
     }
 }
